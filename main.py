@@ -18,10 +18,16 @@ async def main():
 
     URL = 'http://e963-212-10-147-231.ngrok.io/api/RaspberryGateway'
 
-    # read data using pin 4
+    #init dht11 driver on pin 4
     instance = DHT11Driver(pin = 4)
+    
+    #init humidity regulator on in 14
     humidityRegulator = RegulatorDriver(pin = 14)
+    
+    #init temperature regulator on in 15
     temperatureRegulator = RegulatorDriver(pin = 15)
+    
+    #init http request class
     requests = HttpRequests(url = URL)
 
 
